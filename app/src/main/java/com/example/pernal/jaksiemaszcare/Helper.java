@@ -1,7 +1,11 @@
 package com.example.pernal.jaksiemaszcare;
 
 import android.content.Context;
+import android.net.Uri;
 import android.widget.Toast;
+
+import java.net.MalformedURLException;
+
 
 /**
  * Created by pernal on 15.11.17.

@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import java.net.MalformedURLException;
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar mainActivityToolbar;
@@ -17,13 +19,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainActivityToolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        button = (Button) findViewById(R.id.button);
+        mainActivityToolbar = findViewById(R.id.main_toolbar);
+        button = findViewById(R.id.button);
         intent = new Intent(this,  SecondActivity.class);
 
         setSupportActionBar(mainActivityToolbar);
 
-        button.setOnClickListener((view) -> startActivity(intent));
+        button.setOnClickListener((view) -> {
+
+            Contact contactToLoad = new Contact("Jakub Pernal", "668529723",
+                                                "https://i.ytimg.com/vi/3bqS5L86Jjc/maxresdefault.jpg");
+
+            intent.putExtra("contact", contactToLoad);
+            startActivity(intent);
+
+        });
 
     }
 }
