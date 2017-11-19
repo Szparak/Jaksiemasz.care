@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-import java.net.URL;
 
 /**
  * Created by pernal on 18.11.17.
@@ -22,7 +21,7 @@ public class Contact implements Parcelable {
         this.contactUrl = contactUrl;
     }
 
-    public Contact(Parcel in){
+    private Contact(Parcel in){
                  String[] data = new String[3];
 
                  in.readStringArray(data);
